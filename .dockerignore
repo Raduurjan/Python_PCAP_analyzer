@@ -1,0 +1,35 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# PCAP data (mount at runtime, don't bake into image)
+*.pcap
+*.pcapng
+*.cap
+*.pcap[0-9]*
+
+# Generated reports
+reports/
+output/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore

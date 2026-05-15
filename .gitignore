@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# PCAP data (never commit captures)
+*.pcap
+*.pcapng
+*.cap
+*.pcap[0-9]*
+
+# Generated reports
+reports/
+
+# YARA compiled artifacts
+*.yarc
+
+# Logs
+*.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
