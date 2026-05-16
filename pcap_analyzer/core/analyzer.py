@@ -71,15 +71,18 @@ class PCAPAnalyzer:
         print("[+] Running specialized detectors...")
         findings = self._run_detectors()
         print(f"[+] Found {len(findings)} security findings")
-        
+
+        # Merge rule matches into findings
+        rule_findings = [self._match_to_dict(m) for m in rule_matches]
+        all_findings = findings + rule_findings
+
         # Compile results
         self.results = {
             'pcap_file': pcap_path,
             'analysis_time': datetime.now().isoformat(),
-            'summary': self._generate_summary(findings),
+            'summary': self._generate_summary(all_findings),
             'statistics': stats,
-            'findings': findings,
-            'rule_matches': [self._match_to_dict(m) for m in rule_matches],
+            'findings': all_findings,
             'flows': self._flows_to_dict(),
         }
         
