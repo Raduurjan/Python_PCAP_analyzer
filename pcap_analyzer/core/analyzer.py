@@ -181,6 +181,7 @@ class PCAPAnalyzer:
     def _match_to_dict(self, match) -> Dict:
         """Convert RuleMatch to dictionary."""
         return {
+            'type': match.rule_name,
             'rule_name': match.rule_name,
             'severity': match.severity.value,
             'description': match.description,
